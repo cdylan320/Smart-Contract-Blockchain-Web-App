@@ -13,6 +13,10 @@ contract ProjectFactory {
     function getDeployedProjects() public view returns (address payable[] memory) {
         return deployedProjects;
     }
+    function getSender() public returns (address payable) {
+
+        return payable(msg.sender);
+    }
 }
 
 contract Project {

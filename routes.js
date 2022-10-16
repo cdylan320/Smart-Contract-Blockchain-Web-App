@@ -6,6 +6,7 @@ routes
   .add("/projects/:address/requests", "/projects/requests/index")
   .add("/projects/:address/requests/new", "/projects/requests/new")
   .add("/projects/projectLists", "/projects/projectLists")
-  .add("/projects/dashboard", "/projects/dashboard");
+  .add("/projects/dashboard", "/projects/dashboard")
+  .add("/projects/how", "/projects/how");
 
 module.exports = routes;

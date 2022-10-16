@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Link } from "../routes";
 const navigation = [
   { name: "Search", href: "/projects/projectLists" },
-  { name: "How It Works", href: "#" },
+  { name: "How It Works", href: "/projects/how" },
 ];
 import SignIn from "./SignIn";
 
