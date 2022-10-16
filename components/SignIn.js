@@ -11,13 +11,16 @@ import { LockClosedIcon } from '@heroicons/react/20/solid'
 export default function SignIn({ word, handleLog }) {
     const [open, setOpen] = useState(false);
     const handleOpen = event => {
-        event.preventDefault();
         setOpen(!open);
+        event.preventDefault();
+        return false;
     };
     const handleLogging = event => {
-        event.preventDefault();
+
         handleLog();
         setOpen(!open);
+        event.preventDefault();
+        return false;
     };
 
 

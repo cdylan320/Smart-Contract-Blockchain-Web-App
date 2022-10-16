@@ -3,7 +3,11 @@ import factory from "../ethereum/factory";
 import Project from "../ethereum/project";
 import CardProp from "../components/CardProp";
 import HomePage from "./projects/homepage";
+<<<<<<< HEAD
 import ProjectShow from "./projects/show";
+=======
+import Dashboard from "./Dashboard"
+>>>>>>> origin/main
 
 const getSummary = async (address) => {
   const summary = await Project(address).methods.getSummary().call();
