@@ -1,5 +1,3 @@
-
-
 export default function Choices() {
     return(
         <div className="container-fluid footer bg-white">
@@ -58,3 +56,4 @@ export default function Choices() {
         </div>
     )
   }
+  
