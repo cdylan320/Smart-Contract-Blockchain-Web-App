@@ -48,6 +48,7 @@ class ProjectShow extends Component {
           approvals={approversCount}
           manager={manager}
           description={description}
+          address={this.props.address}
         />
       </>
     );

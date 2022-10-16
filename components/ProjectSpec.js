@@ -1,3 +1,5 @@
+import ContributeForm from "./ContributeForm";
+
 export default function ProjectSpec(props) {
   return (
     <div className="bg-orange-200 p-10">
@@ -8,7 +10,7 @@ export default function ProjectSpec(props) {
             <img
               src={props.image}
               alt="img-blur-shadow"
-              className="max-w-3xl max-h-md rounded-lg"
+              className="w-100 h-100 rounded-lg"
             />
           </div>
           <div className="p-5 mt-10 bg-white text-xl rounded-lg drop-shadow-md">
@@ -22,16 +24,11 @@ export default function ProjectSpec(props) {
             <div className="text-sm mt-2 font-thin">
               {props.approvals} supporters
             </div>
-            <a href="#">
-              <div className="border-2 bg-orange-400 border-orange-300 p-3 font-semibold text-sm align-middle mt-3 text-center text-white">
-                Support NEED TO HOOK
-              </div>
-            </a>
+            <ContributeForm address={props.address} />
             <div
               className="border-2 border-orange-300 p-3 bg-orange-200 font-semibold text-sm align-middle mt-3 text-white text-center cursor-pointer"
               onClick={() => {
                 navigator.clipboard.writeText(window.location.href);
-
               }}
             >
               Share

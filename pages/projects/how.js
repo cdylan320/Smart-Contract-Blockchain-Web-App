@@ -15,7 +15,10 @@ export default function How() {
               build the projects that will benefit the world.
             </div>
             <div className="m-10 col-span-2 place-content-center content-center text-center">
-              <div className="w-85 h-96 bg-orange-500"></div>
+              <img
+                src="/createproject.png"
+                className="w-auto h-auto mx-auto"
+              ></img>
             </div>
             <div className="mt-10 mb-10 pt-5">
               <div className="grid grid-cols-3 gap-5 mt-10">

@@ -35,7 +35,9 @@ class ContributeForm extends Component {
     return (
       <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
         <Form.Field>
-          <label>Amount to Contribute</label>
+          <label className="text-2xl text-orange-600">
+            Amount to Contribute
+          </label>
           <Input
             value={this.state.value}
             onChange={(event) => this.setState({ value: event.target.value })}
@@ -43,7 +45,6 @@ class ContributeForm extends Component {
             labelPosition="right"
           />
         </Form.Field>
-        <Message error header="Oops!" content={this.state.errorMessage} />
         <Button primary loading={this.state.loading}>
           Contribute!
         </Button>
