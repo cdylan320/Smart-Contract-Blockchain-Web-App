@@ -3,7 +3,6 @@ import factory from "../../ethereum/factory";
 import Layout from "../../components/Layout";
 import Project from "../../ethereum/project";
 import CardProp from "../../components/CardProp";
-import { Router } from "../../routes";
 const getSummary = async (address) => {
   const summary = await Project(address).methods.getSummary().call();
   return summary;
@@ -19,11 +18,7 @@ class ProjectLists extends Component {
     return { projects: projects, projectMeta: result };
   }
   renderProjects() {
-    console.log("Project Meta", this.props.projectMeta);
-    console.log(this.props.projects);
     return this.props.projectMeta.map((summary, index) => {
-      console.log(summary[4]);
-      console.log(this.props.projects[index]);
       return (
         <CardProp
           minimumContribution={summary[0]}

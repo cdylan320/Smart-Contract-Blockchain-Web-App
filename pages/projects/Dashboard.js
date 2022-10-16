@@ -1,11 +1,8 @@
 import { useState } from "react";
+import { Button } from "@material-tailwind/react";
 
-import { Link } from "../routes";
-
-import NavBar from "../components/NavBar";
-import Profile from "../components/Profile";
-import InvestorDashboard from "../components/InvestorDashboard";
-import OrganizorDashboard from "../components/OrganizorDashboard";
+import NavBar from "../../components/NavBar";
+import Profile from "../../components/Profile";
 
 export default function Dashboard() {
   const [currentTab, setTab] = useState("Profile");
@@ -51,29 +48,15 @@ export default function Dashboard() {
             <Profile />
           </>
         )}
-        {currentTab == "Organizer" && (
-          <div className="mx-auto">
-            <OrganizorDashboard /> (
-            <Link to="/projects/new">
-              <button class="absolute top-[20%] right-[13%] bg-orange-500 hover:bg-orange-700 max-h-10 text-white font-bold py-2 px-4 rounded">
-                Create Project
-              </button>
-            </Link>
-            ){" "}
-          </div>
-        )}
-        {currentTab == "Investor" && (
-          <div className="mx-auto">
-            <InvestorDashboard />{" "}
-          </div>
-        )}
+        {currentTab == "Organizer" && <></>}
+        {currentTab == "Investor" && <h1>hello</h1>}
         {currentTab == "Freelancer" && (
           <>
             <Profile />
             <Button
               variant="filled"
               color="orange"
-              className="absolute top-[20%] right-[13%] bg-orange-500 hover:bg-orange-700 max-h-10 text-white font-bold py-2 px-4 rounded"
+              className="absolute top-[20%] right-[15%] max-h-10"
             >
               Edit
             </Button>

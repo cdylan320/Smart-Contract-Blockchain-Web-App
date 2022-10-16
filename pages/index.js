@@ -10,7 +10,6 @@ const getSummary = async (address) => {
 };
 
 class ProjectIndex extends Component {
-
   static async getInitialProps() {
     const projects = await factory.methods.getDeployedProjects().call();
     const projectMeta = projects.map(async (address) => {

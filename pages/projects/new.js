@@ -42,7 +42,7 @@ class ProjectNew extends Component {
   render() {
     return (
       <Layout>
-        <h3>Create project</h3>
+        <h3 className="text-5xl text-orange-600 font-bold my-8">Create project</h3>
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           <Form.Field>
             <label>Name</label>

@@ -36,7 +36,7 @@ export default function CardProp(props) {
           style={{ animation: "fadein 2s" }}
         >
           <i className="fas fa-map-marker-alt fa-sm mt-[3px]" />
-          <Link href={`/projects/${address}`}>
+          <Link route={`/projects/projectLists/${address}`}>
             <a>View Project</a>
           </Link>
         </Typography>
