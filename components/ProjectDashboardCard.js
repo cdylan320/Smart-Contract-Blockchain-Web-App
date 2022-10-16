@@ -1,6 +1,7 @@
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { BoltIcon } from '@heroicons/react/24/outline'
+import { Router } from "../routes"
 
 export default function ProjectDashboardCard(props) {
   const [open, setOpen] = useState(false)
@@ -19,7 +20,7 @@ export default function ProjectDashboardCard(props) {
           </p>
           <div className="flex items-center">
             <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
-              View
+              View Project
             </button>
             {props.investor ?
               <button className="bg-orange-700 ml-5 hover:bg-orange-900 text-white font-bold py-2 px-4 rounded" onClick={() => setOpen(true)}>
@@ -58,9 +59,9 @@ export default function ProjectDashboardCard(props) {
                           <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                             <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                               <div className="sm:flex sm:items-start">
-                                <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                                <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-yellow-200 sm:mx-0 sm:h-10 sm:w-10">
                                   <BoltIcon
-                                    className="h-6 w-6 text-red-600"
+                                    className="h-6 w-6 text-yellow-700"
                                     aria-hidden="true"
                                   />
                                 </div>
@@ -69,13 +70,11 @@ export default function ProjectDashboardCard(props) {
                                     as="h3"
                                     className="text-lg font-medium leading-6 text-gray-900"
                                   >
-                                    Deactivate account
+                                    This project has a request that you must follow up on!
                                   </Dialog.Title>
                                   <div className="mt-2">
                                     <p className="text-sm text-gray-500">
-                                      Are you sure you want to deactivate your account?
-                                      All of your data will be permanently removed. This
-                                      action cannot be undone.
+                                      " Description ", " Current Investor Acceptance ", " Recepient ", " The Amount of ETH used "
                                     </p>
                                   </div>
                                 </div>
@@ -84,18 +83,18 @@ export default function ProjectDashboardCard(props) {
                             <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                               <button
                                 type="button"
-                                className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
+                                className="inline-flex w-full justify-center rounded-md border border-transparent bg-green-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
                                 onClick={() => setOpen(false)}
                               >
-                                Deactivate
+                                Accept
                               </button>
                               <button
                                 type="button"
-                                className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                                className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
                                 onClick={() => setOpen(false)}
                                 ref={cancelButtonRef}
                               >
-                                Cancel
+                                Deny
                               </button>
                             </div>
                           </Dialog.Panel>
@@ -106,7 +105,9 @@ export default function ProjectDashboardCard(props) {
                 </Transition.Root>
                 ) : null }
               </button>
-             : null}
+             : <button className="bg-orange-700 ml-5 hover:bg-orange-900 text-white font-bold py-2 px-4 rounded" onClick={() => Router.pushRoute("/")}>
+             View Requests
+           </button>}
           </div>
         </div>
         <img
