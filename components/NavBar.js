@@ -7,6 +7,7 @@ const navigation = [
   { name: "Start a Project", href: "/projects/new" },
   { name: "How It Works", href: "#" },
 ];
+import SignIn from "./SignIn";
 
 export default function NavBar() {
   const [loggedIn, setLog] = useState(false);
@@ -44,8 +45,6 @@ export default function NavBar() {
                 {item.name}
               </a>
             ))}
-
-
           </div>
           {loggedIn && (
             <Image
@@ -55,11 +54,8 @@ export default function NavBar() {
               height={20}
               style={{ marginLeft: "5px" }}
             />
-
           )}
-          {!loggedIn && (
-            <SignIn word={"Log In"} handleLog={handleLog} />
-          )}
+          {!loggedIn && <SignIn word={"Log In"} handleLog={handleLog} />}
         </nav>
       </div>
 
@@ -101,7 +97,6 @@ export default function NavBar() {
                 </a>
               ))}
             </div>
-
           </div>
         </Popover.Panel>
       </Transition>

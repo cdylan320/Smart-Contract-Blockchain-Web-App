@@ -3,6 +3,7 @@ import factory from "../ethereum/factory";
 import Project from "../ethereum/project";
 import CardProp from "../components/CardProp";
 import HomePage from "./projects/homepage";
+import ProjectShow from "./projects/show";
 
 const getSummary = async (address) => {
   const summary = await Project(address).methods.getSummary().call();
@@ -10,7 +11,6 @@ const getSummary = async (address) => {
 };
 
 class ProjectIndex extends Component {
-
   static async getInitialProps() {
     const projects = await factory.methods.getDeployedProjects().call();
     const projectMeta = projects.map(async (address) => {
@@ -37,7 +37,8 @@ class ProjectIndex extends Component {
     });
   }
   render() {
-    return <HomePage />;
+    // return <HomePage />;
+    return <ProjectShow />;
   }
 }
 
