@@ -6,7 +6,6 @@ import { Link } from "../routes";
 import SignIn from "./SignIn"
 const navigation = [
   { name: "Search", href: "/projects/projectLists" },
-  { name: "Start a Project", href: "/projects/new" },
   { name: "How It Works", href: "#" },
 ];
 

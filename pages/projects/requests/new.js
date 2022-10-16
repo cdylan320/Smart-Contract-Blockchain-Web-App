@@ -46,7 +46,7 @@ class RequestNew extends Component {
         <Link route={`/projects/${this.props.address}/requests`}>
           <a>Back</a>
         </Link>
-        <h3>Create a Request</h3>
+        <div >Create a Request</div>
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           <Form.Field>
             <label>Description</label>
