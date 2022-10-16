@@ -36,7 +36,7 @@ class ProjectIndex extends Component {
     });
   }
   render() {
-    return <Dashboard />;
+    return <HomePage />;
   }
 }
 
