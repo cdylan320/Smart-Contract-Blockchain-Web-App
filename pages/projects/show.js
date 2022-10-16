@@ -44,6 +44,7 @@ class ProjectShow extends Component {
           image={image}
           name={name}
           mini={minimumContribution}
+          balance={balance}
           approvals={approversCount}
           manager={manager}
           description={description}
