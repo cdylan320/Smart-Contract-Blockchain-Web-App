@@ -62,7 +62,7 @@ class RequestNew extends Component {
               className="mb-4 grid h-28 place-items-center"
             >
               <Typography variant="h3" color="white">
-                Create Project
+                Create Request
               </Typography>
             </CardHeader>
             <CardBody className="text-left">
