@@ -33,7 +33,7 @@ class ProjectLists extends Component {
   render() {
     return (
       <Layout>
-        <div class="grid grid-cols-3 gap-50">{this.renderProjects()}</div>
+        <div class="grid grid-cols-3 gap-3">{this.renderProjects()}</div>
       </Layout>
       // <HeroSection />
     );
