@@ -3,14 +3,15 @@ import { Card, Button } from "semantic-ui-react";
 import factory from "../ethereum/factory";
 import Layout from "../components/Layout";
 import { Link } from "../routes";
-import { Navbar } from "@material-tailwind/react";
+// import { Navbar } from "@material-tailwind/react";
 
-import NavBar from "../components/NavBar"
-import HeroSection from "../components/HeroSection";
-import OrganizationCard from "../components/OrganizationCard";
-import Choices from "../components/Choices"
-import Footer from "../components/Footer"
-import SignIn from "../components/SignIn"
+// import NavBar from "../components/NavBar"
+// import HeroSection from "../components/HeroSection";
+// import OrganizationCard from "../components/OrganizationCard";
+// import Choices from "../components/Choices"
+// import Footer from "../components/Footer"
+// import SignIn from "../components/SignIn"
+import Dashboard from "./Dashboard"
 
 class ProjectIndex extends Component {
 
@@ -37,7 +38,8 @@ class ProjectIndex extends Component {
   render() {
     return (
       <>
-        <NavBar />
+        <Dashboard />
+        {/* <NavBar />
         <HeroSection />
         <Choices />
         <div className="bg-orange-600 py-10">
@@ -48,7 +50,7 @@ class ProjectIndex extends Component {
             <OrganizationCard />
           </div>
         </div>
-        <Footer />
+        <Footer /> */}
 
 
       </>

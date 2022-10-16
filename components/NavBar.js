@@ -3,6 +3,7 @@ import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import SignIn from "./SignIn";
 import Image from 'next/image'
+import Link from 'next/link';
 
 const navigation = [
   { name: "Search", href: "#" },
@@ -54,6 +55,7 @@ export default function NavBar() {
               height={20}
               style={{ marginLeft: "5px" }}
             />
+
           )}
           {!loggedIn && (
             <SignIn word={"Log In"} handleLog={handleLog} />
