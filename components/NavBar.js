@@ -1,6 +1,8 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import SignIn from "./SignIn";
+import Image from 'next/image'
 
 const navigation = [
   { name: "Search", href: "#" },
@@ -9,6 +11,8 @@ const navigation = [
 ];
 
 export default function NavBar() {
+  const [loggedIn, setLog] = useState(false);
+  const handleLog = () => setLog(true);
   return (
     <Popover>
       <div className="relative px-4 pt-6 sm:px-6 lg:px-8">
@@ -29,7 +33,7 @@ export default function NavBar() {
               </div>
             </div>
           </div>
-          <div className="hidden md:ml-10 md:block md:space-x-8 md:pr-4">
+          <div className="flex flex-row hidden md:ml-10 md:block md:space-x-8 md:pr-4">
             {navigation.map((item) => (
               <a
                 key={item.name}
@@ -39,13 +43,21 @@ export default function NavBar() {
                 {item.name}
               </a>
             ))}
-            <a
-              href="#"
-              className="font-medium text-orange-600 hover:text-orange-500"
-            >
-              Log in
-            </a>
+
+
           </div>
+          {loggedIn && (
+            <Image
+              src="/user.png"
+              alt="Picture of the author"
+              width={20}
+              height={20}
+              style={{ marginLeft: "5px" }}
+            />
+          )}
+          {!loggedIn && (
+            <SignIn word={"Log In"} handleLog={handleLog} />
+          )}
         </nav>
       </div>
 
@@ -87,12 +99,7 @@ export default function NavBar() {
                 </a>
               ))}
             </div>
-            <a
-              href="#"
-              className="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100"
-            >
-              Log in
-            </a>
+
           </div>
         </Popover.Panel>
       </Transition>

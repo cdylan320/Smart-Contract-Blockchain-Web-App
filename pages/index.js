@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Card, Button } from "semantic-ui-react";
 import factory from "../ethereum/factory";
 import Layout from "../components/Layout";
@@ -10,14 +10,17 @@ import HeroSection from "../components/HeroSection";
 import OrganizationCard from "../components/OrganizationCard";
 import Choices from "../components/Choices"
 import Footer from "../components/Footer"
+import SignIn from "../components/SignIn"
 
 class ProjectIndex extends Component {
+
   static async getInitialProps() {
     const projects = await factory.methods.getDeployedProjects().call();
 
     return { projects };
   }
   renderProjects() {
+
     const items = this.props.projects.map((address) => {
       return {
         header: address,
@@ -46,7 +49,6 @@ class ProjectIndex extends Component {
           </div>
         </div>
         <Footer />
-
 
 
       </>
