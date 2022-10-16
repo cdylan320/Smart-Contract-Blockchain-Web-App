@@ -14,7 +14,7 @@ export default function CardProp(props) {
   return (
     <Card className="mt-12 w-96 group">
       <CardHeader color="orange" className="relative">
-        <img src={props.image} alt="img-blur-shadow" className="h-50 w-auto" />
+        <img src={props.image} alt="img-blur-shadow" className="h-52 w-96 overflow-hidden" />
       </CardHeader>
       <CardBody className="text-center">
         <Typography variant="h6" className="mb-2">
