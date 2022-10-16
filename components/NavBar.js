@@ -1,13 +1,13 @@
 import { Fragment, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Image from 'next/image';
+import Image from "next/image";
 import { Link } from "../routes";
-import SignIn from "./SignIn"
 const navigation = [
   { name: "Search", href: "/projects/projectLists" },
   { name: "How It Works", href: "#" },
 ];
+import SignIn from "./SignIn";
 
 export default function NavBar() {
   const [loggedIn, setLog] = useState(false);
@@ -51,8 +51,6 @@ export default function NavBar() {
                 {item.name}
               </a>
             ))}
-
-
           </div>
           {loggedIn && (
             <Image
@@ -61,11 +59,8 @@ export default function NavBar() {
               width={20}
               height={20}
             />
-
           )}
-          {!loggedIn && (
-            <SignIn word={"Log In"} handleLog={handleLog} />
-          )}
+          {!loggedIn && <SignIn word={"Log In"} handleLog={handleLog} />}
         </nav>
       </div>
 
@@ -107,7 +102,6 @@ export default function NavBar() {
                 </a>
               ))}
             </div>
-
           </div>
         </Popover.Panel>
       </Transition>
