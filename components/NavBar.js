@@ -21,10 +21,16 @@ export default function NavBar() {
         >
           <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
             <div className="flex w-full items-center justify-between md:w-auto">
+              <Image
+                src="/logo.png"
+                alt="Picture of the author"
+                width={40}
+                height={40}
+              />
               <a href="#" className="text-orange-600 hover:text-orange-500">
                 <span className="sr-only">GuaranteedGood</span>
                 <Link route="/">
-                  <h1>GuaranteedGood</h1>
+                  <div className="font-black">GuaranteedGood</div>
                 </Link>
               </a>
               <div className="-mr-2 flex items-center md:hidden">
@@ -54,7 +60,6 @@ export default function NavBar() {
               alt="Picture of the author"
               width={20}
               height={20}
-              style={{ marginLeft: "5px" }}
             />
 
           )}
