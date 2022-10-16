@@ -1,6 +1,6 @@
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+import { BoltIcon } from '@heroicons/react/24/outline'
 
 export default function ProjectDashboardCard(props) {
   const [open, setOpen] = useState(false)
@@ -21,7 +21,7 @@ export default function ProjectDashboardCard(props) {
             <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
               View
             </button>
-            {props.investor ? (
+            {props.investor ?
               <button className="bg-orange-700 ml-5 hover:bg-orange-900 text-white font-bold py-2 px-4 rounded" onClick={() => setOpen(true)}>
                 Requests (0)
                 {open ? (
@@ -59,7 +59,7 @@ export default function ProjectDashboardCard(props) {
                             <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                               <div className="sm:flex sm:items-start">
                                 <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                                  <ExclamationTriangleIcon
+                                  <BoltIcon
                                     className="h-6 w-6 text-red-600"
                                     aria-hidden="true"
                                   />
@@ -106,10 +106,9 @@ export default function ProjectDashboardCard(props) {
                 </Transition.Root>
                 ) : null }
               </button>
-            ) : null}
+             : null}
           </div>
         </div>
-
         <img
           className=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-r-lg"
           src="/hands.jpg"
