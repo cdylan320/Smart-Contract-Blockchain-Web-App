@@ -38,27 +38,6 @@ class ProjectShow extends Component {
       image,
     } = this.props;
     return (
-      // <Layout>
-      //   <h3>Project Show</h3>
-      //   <Grid>
-      //     <Grid.Row>
-      //       <Grid.Column width={10}>{this.renderCards()}</Grid.Column>
-      //       <Grid.Column width={6}>
-      //         <ContributeForm address={this.props.address} />
-      //       </Grid.Column>
-      //     </Grid.Row>
-
-      //     <Grid.Row>
-      //       <Grid.Column>
-      //         <Link route={`/projects/${this.props.address}/requests`}>
-      //           <a>
-      //             <Button primary>View Requests</Button>
-      //           </a>
-      //         </Link>
-      //       </Grid.Column>
-      //     </Grid.Row>
-      //   </Grid>
-      // </Layout>
       <>
         <NavBar />
         <ProjectSpec

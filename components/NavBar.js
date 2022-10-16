@@ -53,12 +53,14 @@ export default function NavBar() {
             ))}
           </div>
           {loggedIn && (
-            <Image
-              src="/user.png"
-              alt="Picture of the author"
-              width={20}
-              height={20}
-            />
+            <Link route="/projects/dashboard">
+              <Image
+                src="/user.png"
+                alt="Picture of the author"
+                width={20}
+                height={20}
+              />
+            </Link>
           )}
           {!loggedIn && <SignIn word={"Log In"} handleLog={handleLog} />}
         </nav>
