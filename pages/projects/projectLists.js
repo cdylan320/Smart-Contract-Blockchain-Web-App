@@ -1,23 +1,15 @@
 import React, { Component } from "react";
-import { Card, Button } from "semantic-ui-react";
-import factory from "../ethereum/factory";
-import Layout from "../components/Layout";
-import { Link } from "../routes";
-import HeroSection from "../components/HeroSection";
-import Project from "../ethereum/project";
-import CardProp from "../components/CardProp";
-import NavBar from "../components/NavBar";
-import Choices from "../components/Choices";
-import OrganizationCard from "../components/OrganizationCard";
-import Footer from "../components/Footer";
-import HomePage from "./projects/homepage";
-
+import factory from "../../ethereum/factory";
+import Layout from "../../components/Layout";
+import Project from "../../ethereum/project";
+import CardProp from "../../components/CardProp";
+import { Router } from "../../routes";
 const getSummary = async (address) => {
   const summary = await Project(address).methods.getSummary().call();
   return summary;
 };
 
-class ProjectIndex extends Component {
+class ProjectLists extends Component {
   static async getInitialProps() {
     const projects = await factory.methods.getDeployedProjects().call();
     const projectMeta = projects.map(async (address) => {
@@ -44,8 +36,13 @@ class ProjectIndex extends Component {
     });
   }
   render() {
-    return <HomePage />;
+    return (
+      <Layout>
+        <div class="grid grid-cols-3 gap-50">{this.renderProjects()}</div>
+      </Layout>
+      // <HeroSection />
+    );
   }
 }
 
-export default ProjectIndex;
+export default ProjectLists;

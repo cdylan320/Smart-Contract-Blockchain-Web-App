@@ -10,6 +10,9 @@ class ProjectNew extends Component {
     minimumContribution: "",
     errorMessage: "",
     loading: false,
+    name: "",
+    description: "",
+    image: "",
   };
 
   onSubmit = async (event) => {
@@ -18,9 +21,16 @@ class ProjectNew extends Component {
 
     try {
       const accounts = await web3.eth.getAccounts();
-      await factory.methods.createProject(this.state.minimumContribution).send({
-        from: accounts[0],
-      });
+      await factory.methods
+        .createProject(
+          this.state.minimumContribution,
+          this.state.name,
+          this.state.description,
+          this.state.image
+        )
+        .send({
+          from: accounts[0],
+        });
 
       Router.pushRoute("/");
     } catch (err) {
@@ -35,6 +45,23 @@ class ProjectNew extends Component {
         <h3>Create project</h3>
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           <Form.Field>
+            <label>Name</label>
+            <Input
+              value={this.state.name}
+              onChange={(event) => this.setState({ name: event.target.value })}
+            />
+            <label>Description</label>
+            <Input
+              value={this.state.description}
+              onChange={(event) =>
+                this.setState({ description: event.target.value })
+              }
+            />
+            <label>Image URL</label>
+            <Input
+              value={this.state.image}
+              onChange={(event) => this.setState({ image: event.target.value })}
+            />
             <label>Minimum Contribution</label>
             <Input
               label="wei"

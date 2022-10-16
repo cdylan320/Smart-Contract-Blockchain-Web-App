@@ -1,10 +1,10 @@
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-
+import { Link } from "../routes";
 const navigation = [
-  { name: "Search", href: "#" },
-  { name: "Start a Project", href: "#" },
+  { name: "Search", href: "/projects/projectLists" },
+  { name: "Start a Project", href: "/projects/new" },
   { name: "How It Works", href: "#" },
 ];
 
@@ -20,7 +20,9 @@ export default function NavBar() {
             <div className="flex w-full items-center justify-between md:w-auto">
               <a href="#" className="text-orange-600 hover:text-orange-500">
                 <span className="sr-only">GuaranteedGood</span>
-                <h1>GuaranteedGood</h1>
+                <Link route="/">
+                  <h1>GuaranteedGood</h1>
+                </Link>
               </a>
               <div className="-mr-2 flex items-center md:hidden">
                 <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">

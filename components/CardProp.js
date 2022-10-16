@@ -5,28 +5,29 @@ import {
   CardFooter,
   Typography,
 } from "@material-tailwind/react";
+import Link from "next/link";
 
-export default function OrganizationCard() {
+export default function CardProp(props) {
+  console.log(props);
+  const address = props.address;
+  console.log(address);
   return (
-    <Card className="mt-12 w-64 group">
+    <Card className="mt-12 w-96 group">
       <CardHeader color="orange" className="relative">
-        <img src="./help.jpg" alt="img-blur-shadow" className="h-auto w-auto" />
+        <img src={props.image} alt="img-blur-shadow" className="h-50 w-auto" />
       </CardHeader>
       <CardBody className="text-center">
         <Typography variant="h6" className="mb-2">
-          Help people on moutains
+          {props.title}
         </Typography>
-        <h3 className="text-sm text-blue">
-          Create a web application for people who needs help for harvesting on
-          moutains
-        </h3>
+        <h3 className="text-sm text-blue">{props.description}</h3>
       </CardBody>
       <CardFooter
         divider
         className="flex flex-row items-center justify-between py-3"
       >
         <Typography variant="small" color="green">
-          1.5 wei
+          {props.minimumContribution} wei
         </Typography>
         <Typography
           variant="small"
@@ -35,7 +36,9 @@ export default function OrganizationCard() {
           style={{ animation: "fadein 2s" }}
         >
           <i className="fas fa-map-marker-alt fa-sm mt-[3px]" />
-          <a href="#">View Project</a>
+          <Link href={`/projects/${address}`}>
+            <a>View Project</a>
+          </Link>
         </Typography>
       </CardFooter>
     </Card>
