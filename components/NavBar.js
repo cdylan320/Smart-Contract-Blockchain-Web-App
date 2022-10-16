@@ -1,7 +1,9 @@
 import { Fragment, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from 'next/image';
 import { Link } from "../routes";
+import SignIn from "./SignIn"
 const navigation = [
   { name: "Search", href: "/projects/projectLists" },
   { name: "Start a Project", href: "/projects/new" },
