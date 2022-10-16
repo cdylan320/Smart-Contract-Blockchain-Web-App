@@ -3,6 +3,8 @@ import { Button } from "@material-tailwind/react";
 
 import NavBar from "../components/NavBar"
 import Profile from "../components/Profile"
+import InvestorDashboard from "../components/InvestorDashboard"
+import OrganizorDashboard from "../components/OrganizorDashboard";
 
 export default function Dashboard() {
     const [currentTab, setTab] = useState("Profile");
@@ -20,8 +22,8 @@ export default function Dashboard() {
                     </div>
                 </div>
                 {currentTab == "Profile" && (<><Profile /></>)}
-                {currentTab == "Organizer" && (<></>)}
-                {currentTab == "Investor" && (<h1>hello</h1>)}
+                {currentTab == "Organizer" && (<div className="mx-auto"><OrganizorDashboard/> </div>)}
+                {currentTab == "Investor" && (<div className="mx-auto"><InvestorDashboard/> </div>)}
                 {currentTab == "Freelancer" && (<><Profile /><Button variant="filled" color="orange" className="absolute top-[20%] right-[15%] max-h-10">Edit</Button></>)}
             </div>
 

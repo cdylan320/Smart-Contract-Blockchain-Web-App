@@ -5,7 +5,7 @@ import {
   CardFooter,
   Typography,
 } from "@material-tailwind/react";
-import Link from "next/link";
+import { Link } from "../routes";
 
 export default function CardProp(props) {
   console.log(props);

@@ -18,6 +18,7 @@ export default function HomePage() {
           <OrganizationCard />
           <OrganizationCard />
           <OrganizationCard />
+          <OrganizationCard />
         </div>
       </div>
       <Footer />
