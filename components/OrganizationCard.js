@@ -28,11 +28,7 @@ export default function OrganizationCard() {
         <Typography variant="small" color="green">
           1.5 wei
         </Typography>
-        <Typography
-          variant="small"
-          color="gray"
-          className="flex gap-1"
-        >
+        <Typography variant="small" color="gray" className="flex gap-1">
           <i className="fas fa-map-marker-alt fa-sm mt-[3px]" />
           <a href="#">View Project</a>
         </Typography>

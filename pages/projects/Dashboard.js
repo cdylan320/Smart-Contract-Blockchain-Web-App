@@ -12,23 +12,25 @@ export default function Dashboard() {
   const [currentTab, setTab] = useState("Profile");
 
   const selectedNavStyle = {
-    color: "orange"
-  }
+    color: "orange",
+  };
 
   const unselectedNavStyle = {
-    color: "black"
-  }
+    color: "black",
+  };
 
   return (
     <>
-      <NavBar loggedIn={true}/>
+      <NavBar loggedIn={true} />
       <div className="flex flex-row">
         <div className="flex flex-col ml-6 mt-8 text-grey-600">
           <div
             role="button"
             onClick={() => setTab("Profile")}
             className="text-6xl font-black hover:text-orange-600"
-            style={currentTab === "Profile" ? selectedNavStyle : unselectedNavStyle}
+            style={
+              currentTab === "Profile" ? selectedNavStyle : unselectedNavStyle
+            }
           >
             Profile
           </div>
@@ -37,7 +39,11 @@ export default function Dashboard() {
               role="button"
               onClick={() => setTab("Organizer")}
               className="my-4 hover:text-orange-600"
-              style={currentTab === "Organizer" ? selectedNavStyle : unselectedNavStyle}
+              style={
+                currentTab === "Organizer"
+                  ? selectedNavStyle
+                  : unselectedNavStyle
+              }
             >
               Organizer
             </div>
@@ -45,7 +51,11 @@ export default function Dashboard() {
               role="button"
               onClick={() => setTab("Investor")}
               className="my-4 hover:text-orange-600"
-              style={currentTab === "Investor" ? selectedNavStyle : unselectedNavStyle}
+              style={
+                currentTab === "Investor"
+                  ? selectedNavStyle
+                  : unselectedNavStyle
+              }
             >
               Investor
             </div>
@@ -53,7 +63,11 @@ export default function Dashboard() {
               role="button"
               onClick={() => setTab("Freelancer")}
               className="my-4 hover:text-orange-600"
-              style={currentTab === "Freelancer" ? selectedNavStyle : unselectedNavStyle}
+              style={
+                currentTab === "Freelancer"
+                  ? selectedNavStyle
+                  : unselectedNavStyle
+              }
             >
               Freelancer
             </div>

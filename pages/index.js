@@ -19,11 +19,7 @@ class ProjectIndex extends Component {
     return { projects: projects, projectMeta: result };
   }
   renderProjects() {
-    console.log("Project Meta", this.props.projectMeta);
-    console.log(this.props.projects);
     return this.props.projectMeta.map((summary, index) => {
-      console.log(summary[4]);
-      console.log(this.props.projects[index]);
       return (
         <CardProp
           minimumContribution={summary[0]}
