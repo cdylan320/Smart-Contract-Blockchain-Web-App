@@ -9,7 +9,6 @@ import { Link } from "../../routes";
 class ProjectShow extends Component {
   static async getInitialProps(props) {
     const project = Project(props.query.address);
-
     const summary = await project.methods.getSummary().call();
 
     return {
@@ -19,6 +18,9 @@ class ProjectShow extends Component {
       requestsCount: summary[2],
       approversCount: summary[3],
       manager: summary[4],
+      name: summary[5],
+      description: summary[6],
+      image: summary[7],
     };
   }
 
