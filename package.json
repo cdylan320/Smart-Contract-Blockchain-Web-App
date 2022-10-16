@@ -10,7 +10,7 @@
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.12",
     "@material-tailwind/react": "^1.2.4",
-    "@truffle/hdwallet-provider": "^2.1.0",
+    "@truffle/hdwallet-provider": "^2.0.15",
     "fs-extra": "^10.1.0",
     "ganache-cli": "^6.12.2",
     "mocha": "^10.1.0",
