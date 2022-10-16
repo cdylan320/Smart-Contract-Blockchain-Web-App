@@ -35,7 +35,6 @@ class ProjectLists extends Component {
       <Layout>
         <div class="grid grid-cols-3 gap-3">{this.renderProjects()}</div>
       </Layout>
-      // <HeroSection />
     );
   }
 }

@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
@@ -9,9 +9,16 @@ const navigation = [
 ];
 import SignIn from "./SignIn";
 
-export default function NavBar() {
+export default function NavBar(props) {
   const [loggedIn, setLog] = useState(false);
   const handleLog = () => setLog(true);
+
+  useEffect(() => {
+    if (props.loggedIn) {
+      setLog(true)
+    }
+  });
+
   return (
     <Popover>
       <div className="relative px-4 pt-6 sm:px-6 lg:px-8">
@@ -59,6 +66,7 @@ export default function NavBar() {
                 alt="Picture of the author"
                 width={20}
                 height={20}
+                className="cursor-pointer"
               />
             </Link>
           )}
