@@ -1,5 +1,5 @@
 
-export default function Profile() {
+export default function Project() {
     return (
       <div className="bg-orange-200 p-10">
         <div className="p-10 mb-10">

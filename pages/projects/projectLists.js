@@ -1,16 +1,15 @@
 import React, { Component } from "react";
-import factory from "../ethereum/factory";
-import Project from "../ethereum/project";
-import CardProp from "../components/CardProp";
-import HomePage from "./projects/homepage";
-
+import factory from "../../ethereum/factory";
+import Layout from "../../components/Layout";
+import Project from "../../ethereum/project";
+import CardProp from "../../components/CardProp";
+import { Router } from "../../routes";
 const getSummary = async (address) => {
   const summary = await Project(address).methods.getSummary().call();
   return summary;
 };
 
-class ProjectIndex extends Component {
-
+class ProjectLists extends Component {
   static async getInitialProps() {
     const projects = await factory.methods.getDeployedProjects().call();
     const projectMeta = projects.map(async (address) => {
@@ -37,8 +36,13 @@ class ProjectIndex extends Component {
     });
   }
   render() {
-    return <HomePage />;
+    return (
+      <Layout>
+        <div class="grid grid-cols-3 gap-50">{this.renderProjects()}</div>
+      </Layout>
+      // <HeroSection />
+    );
   }
 }
 
-export default ProjectIndex;
+export default ProjectLists;

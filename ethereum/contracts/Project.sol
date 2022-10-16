@@ -5,8 +5,8 @@ pragma solidity ^0.8.9;
 contract ProjectFactory {
     address payable[] public deployedProjects;
 
-    function createProject(uint minimum) public {
-        address newProject = address(new Project(minimum, msg.sender));
+    function createProject(uint minimum, string memory name, string memory descrip, string memory image) public {
+        address newProject = address(new Project(minimum, msg.sender, name, descrip, image));
         deployedProjects.push(payable(newProject));
     }
 
@@ -30,15 +30,21 @@ contract Project {
     uint public minimumContribution;
     mapping(address => bool) public approvers;
     uint public approversCount;
+    string public name;
+    string public descrip;
+    string public image;
 
     modifier restricted() {
         require(msg.sender == manager);
         _;
     }
 
-    constructor (uint minimum, address creator) {
+    constructor (uint minimum, address creator, string memory projectName, string memory projectDescrip, string memory projectImage) {
         manager = creator;
         minimumContribution = minimum;
+        name = projectName;
+        descrip = projectDescrip;
+        image = projectImage;
     }
 
     function contribute() public payable {
@@ -78,14 +84,17 @@ contract Project {
     }
     
     function getSummary() public view returns (
-      uint, uint, uint, uint, address
+      uint, uint, uint, uint, address, string memory, string memory, string memory
       ) {
         return (
           minimumContribution,
           address(this).balance,
           requests.length,
           approversCount,
-          manager
+          manager,
+            name,
+            descrip,
+            image
         );
     }
     
