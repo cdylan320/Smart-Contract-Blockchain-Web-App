@@ -10,20 +10,20 @@ export default function Footer() {
             <div className="grid grid-cols-3 gap-2">
               <div className="flex flex-col space-y-3 font-light">
                 <h6 className="font-semibold text-lg">Contact Information</h6>
-                <div>pp ipsum</div>
-                <div>pp ipsum</div>
+                <div>Email</div>
+                <div>Phone</div>
               </div>
               <div className="flex flex-col space-y-3 font-light">
                 <h6 className="font-semibold text-lg">About Us</h6>
-                <div>pp ipsum</div>
-                <div>pp ipsum</div>
-                <div>pp ipsum</div>
+                <div></div>
+                <div>Home</div>
+                <div>Login</div>
               </div>
               <div className="flex flex-col space-y-3 font-light">
-                <h6 className="font-semibold text-lg">Calhacks</h6>
-                <div>pp ipsum</div>
-                <div>pp ipsum</div>
-                <div>pp ipsum</div>
+                <h6 className="font-semibold text-lg">Learn more</h6>
+                <div>Manage</div>
+                <div>Invest</div>
+                <div>Apply</div>
               </div>
             </div>
           </div>
