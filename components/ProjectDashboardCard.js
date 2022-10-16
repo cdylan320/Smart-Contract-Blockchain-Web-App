@@ -1,6 +1,7 @@
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { BoltIcon } from '@heroicons/react/24/outline'
+import { Router } from "../routes"
 
 export default function ProjectDashboardCard(props) {
   const [open, setOpen] = useState(false)
@@ -19,7 +20,7 @@ export default function ProjectDashboardCard(props) {
           </p>
           <div className="flex items-center">
             <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
-              View
+              View Project
             </button>
             {props.investor ?
               <button className="bg-orange-700 ml-5 hover:bg-orange-900 text-white font-bold py-2 px-4 rounded" onClick={() => setOpen(true)}>
@@ -104,7 +105,9 @@ export default function ProjectDashboardCard(props) {
                 </Transition.Root>
                 ) : null }
               </button>
-             : null}
+             : <button className="bg-orange-700 ml-5 hover:bg-orange-900 text-white font-bold py-2 px-4 rounded" onClick={() => Router.pushRoute("/")}>
+             View Requests
+           </button>}
           </div>
         </div>
         <img
