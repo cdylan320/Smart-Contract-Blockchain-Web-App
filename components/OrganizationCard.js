@@ -8,7 +8,7 @@ import {
 
 export default function OrganizationCard() {
   return (
-    <Card className="mt-12 w-64 group">
+    <Card className="mt-12 w-64 group mx-6">
       <CardHeader color="orange" className="relative">
         <img
           src="./hands.jpg"
@@ -36,10 +36,9 @@ export default function OrganizationCard() {
           variant="small"
           color="gray"
           className="flex gap-1"
-          style={{ animation: "fadein 2s" }}
         >
           <i className="fas fa-map-marker-alt fa-sm mt-[3px]" />
-          Environment
+          Learn More
         </Typography>
       </CardFooter>
     </Card>

@@ -18,9 +18,6 @@ export default function Footer() {
                   <div>pp ipsum</div>
                   <div>pp ipsum</div>
                   <div>pp ipsum</div>
-                  <div>pp ipsum</div>
-                  <div>pp ipsum</div>
-                  <div>pp ipsum</div>
                 </div>
                 <div className="flex flex-col space-y-3 font-light">
                   <h6 className="font-semibold text-lg">Heading</h6>

@@ -18,8 +18,7 @@ export default function NavBar() {
         >
           <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
             <div className="flex w-full items-center justify-between md:w-auto">
-              <a href="#" className="text-orange-600 hover:text-orange-500">
-                <span className="sr-only">GuaranteedGood</span>
+              <a href="#" className="text-orange-600 hover:text-orange-500 font-bold">
                 <h1>GuaranteedGood</h1>
               </a>
               <div className="-mr-2 flex items-center md:hidden">
@@ -35,7 +34,7 @@ export default function NavBar() {
               <a
                 key={item.name}
                 href={item.href}
-                className="font-medium text-gray-500 hover:text-gray-900"
+                className="font-medium text-gray-500 hover:text-orange-600"
               >
                 {item.name}
               </a>
