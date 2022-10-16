@@ -17,7 +17,9 @@ class ProjectLists extends Component {
     const result = await Promise.all(projectMeta);
     return { projects: projects, projectMeta: result };
   }
+
   renderProjects() {
+    console.log(this.props.projects[0]);
     return this.props.projectMeta.map((summary, index) => {
       return (
         <CardProp
