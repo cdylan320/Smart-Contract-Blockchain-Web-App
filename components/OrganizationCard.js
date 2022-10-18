@@ -6,7 +6,7 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
-export default function OrganizationCard() {
+export default function OrganizationCard(props) {
   return (
     <Card className="mt-12 w-64 group mx-6">
       <CardHeader color="orange" className="relative">

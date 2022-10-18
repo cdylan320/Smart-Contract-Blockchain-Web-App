@@ -6,11 +6,11 @@ export default function ProjectSpec(props) {
       <div className="p-10">
         <h1 className="text-5xl font-semibold">{props.name}</h1>
         <div className="grid grid-cols-3 gap-5">
-          <div className="mt-10 col-span-2">
+          <div className="mt-10 col-span-2 w-full">
             <img
               src={props.image}
               alt="img-blur-shadow"
-              className="w-100 h-100 rounded-lg"
+              className="h-auto w-full rounded-lg"
             />
           </div>
           <div className="p-5 mt-10 bg-white text-xl rounded-lg drop-shadow-md">
@@ -18,7 +18,7 @@ export default function ProjectSpec(props) {
             <div className="my-4 w-full h-4 bg-gray-200 rounded-full dark:bg-gray-700">
               <div
                 className={"h-4 bg-green-600 rounded-full dark:bg-green-500"}
-                style={{ width: (props.balance / props.mini) * 100 }}
+                style={{ width: "50%" }}
               ></div>
             </div>
             <div className="text-sm mt-2 font-thin">

@@ -38,16 +38,22 @@ class ContributeForm extends Component {
           <label className="text-2xl text-orange-600">
             Amount to Contribute
           </label>
-          <Input
-            value={this.state.value}
-            onChange={(event) => this.setState({ value: event.target.value })}
-            label="ether"
-            labelPosition="right"
-          />
+          <div class="ui focus input">
+            <Input
+              value={this.state.value}
+              onChange={(event) => this.setState({ value: event.target.value })}
+              labelPosition="right"
+              placeholder="ether"
+              className="text-2xl text-orange-600"
+            />
+            <button
+              loading={this.state.loading}
+              className="bg-orange-700 hover:bg-orange-900 text-white font-bold py-2 px-4 rounded ml-0 mt-3"
+            >
+              Submit
+            </button>
+          </div>
         </Form.Field>
-        <Button primary loading={this.state.loading}>
-          Contribute!
-        </Button>
       </Form>
     );
   }
